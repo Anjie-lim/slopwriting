@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Slop Detection Training</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ===========================================================
+TEMPORARY PASSWORD SCREEN
+=========================================================== -->
+
+<div id="loginScreen" style="
+    position:fixed;
+    inset:0;
+    background:#f8fafc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    font-family:Arial,sans-serif;
+">
+
+    <div style="
+        background:white;
+        padding:40px;
+        border-radius:16px;
+        box-shadow:0 10px 30px rgba(0,0,0,.15);
+        width:360px;
+        text-align:center;
+    ">
+
+        <h2>AI Slop Detection Training</h2>
+
+        <p>This training is temporarily password protected.</p>
+
+        <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter password"
+            style="
+                width:100%;
+                padding:12px;
+                margin:20px 0;
+                border:1px solid #ccc;
+                border-radius:8px;
+                box-sizing:border-box;
+            ">
+
+        <button
+            onclick="checkPassword()"
+            style="
+                width:100%;
+                padding:12px;
+                border:none;
+                background:#2563eb;
+                color:white;
+                border-radius:8px;
+                cursor:pointer;
+            ">
+
+            Enter
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+    const password = "ninjas2026"; // ← Change this to your desired password
+
+    const entered =
+        document.getElementById("passwordInput").value;
+
+    if(entered === password){
+
+        document
+            .getElementById("loginScreen")
+            .style.display = "none";
+
+    }else{
+
+        alert("Incorrect password.");
+
+    }
+
+}
+
+// Allow pressing Enter instead of clicking the button
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+
+        const login =
+            document.getElementById("loginScreen");
+
+        if(login.style.display !== "none"){
+
+            checkPassword();
+
+        }
+
+    }
+
+});
+
+</script>
+
+<!-- ===========================================================
+HEADER
+=========================================================== -->
+
+<header class="hero">
+    <div class="container">
+
+        <h1>AI Slop Detection Training</h1>
+
+        <p>
+
+            Learn how to identify AI-generated image artifacts,
+            write prompts that expose AI weaknesses,
+            and evaluate rendering failures using
+            systematic inspection techniques.
+
+        </p>
+
+       <div class="progress-wrapper">
+
+    <div class="progress-header">
+
+        <span class="progress-text">
+
+            Module Progress
+
+        </span>
+
+        <span
+            class="progress-percent"
+            id="progressPercent">
+
+            25%
+
+        </span>
+
+    </div>
+
+    <div class="progress">
+
+        <div
+            class="progress-fill"
+            id="progressFill">
+        </div>
+
+    </div>
+
+</div>
+
+</header>
+
+<!-- ===========================================================
+NAVIGATION
+=========================================================== -->
+
+<nav class="tab-nav">
+
+<button class="tab-button active">
+
+① Introduction
+
+</button>
+
+<button class="tab-button">
+
+② Prompt Writing
+
+</button>
+
+<button class="tab-button">
+
+③ AI Tell Explorer
+
+</button>
+
+<button class="tab-button">
+
+④ Quiz
+
+</button>
+
+</nav>
+
+<!-- ===========================================================
+MAIN CONTENT
+=========================================================== -->
+
+<main class="container">
+
+<!-- ===========================================================
+TAB 1
+=========================================================== -->
+
+<section class="tab active" id="tab1">
+
+<div class="course-hero">
+
+<div class="course-card">
+
+<span class="course-tag">
+
+AI Image Evaluation Course
+
+</span>
+
+<h2 class="course-title">
+
+AI Slop Detection Training
+
+</h2>
+
+<p class="course-description">
+
+Learn how to identify AI-generated image artifacts, recognize rendering failures, and write high-value prompts that intentionally expose AI weaknesses. This course combines visual examples, prompt engineering, guided practice, and interactive exercises to help you become a more accurate AI image evaluator.
+
+</p>
+
+<div class="course-stats">
+
+<div class="stat-card">
+
+<h3>15–20</h3>
+
+<p>Minutes</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>4</h3>
+
+<p>Interactive Modules</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>28+</h3>
+
+<p>Annotated AI Tells</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>1</h3>
+
+<p>Interactive Assessment</p>
+
+</div>
+
+</div>
+
+<h2>
+
+Learning Objectives
+
+</h2>
+
+<div class="objective-grid">
+
+<div class="objective">
+
+<div class="objective-icon">
+
+✓
+
+</div>
+
+<div>
+
+<h3>Understand AI Slop</h3>
+
+<p>
+
+Define AI slop and explain why image generation models produce visual artifacts.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="objective">
+
+<div class="objective-icon">
+
+✓
+
+</div>
+
+<div>
+
+<h3>Recognize Common AI Tells</h3>
+
+<p>
+
+Identify anatomy errors, malformed text, counting mistakes, object failures, and scene inconsistencies.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="objective">
+
+<div class="objective-icon">
+
+✓
+
+</div>
+
+<div>
+
+<h3>Write High-Value Prompts</h3>
+
+<p>
+
+Use structured prompts that increase the likelihood of exposing AI rendering failures.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="objective">
+
+<div class="objective-icon">
+
+✓
+
+</div>
+
+<div>
+
+<h3>Evaluate Images Systematically</h3>
+
+<p>
+
+Apply structured inspection techniques to classify and document AI-generated artifacts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="start-area">
+
+<button
+class="btn btn-primary"
+id="startLearning">
+
+Start Learning →
+
+</button>
+
+<p class="start-note">
+
+Complete all four modules to finish the course.
+
+</p>
+
+</div>
+
+</div>
+<!-- ===========================================================
+LESSON 1
+=========================================================== -->
+
+<div class="section" id="lesson1">
+
+<div class="card">
+
+<h2>What is AI Slop?</h2>
+
+<p>
+
+<strong>AI Slop</strong> refers to visible rendering artifacts or logical inconsistencies produced by generative AI image models. These errors occur when the model fails to accurately represent anatomy, text, object relationships, counting, or scene logic. While many generated images appear convincing at first glance, closer inspection often reveals subtle mistakes that distinguish them from authentic photographs.
+
+</p>
+
+<br>
+
+<div class="slop-flow">
+
+<div class="flow-box">
+
+<h3>Prompt</h3>
+
+<p>User provides a detailed image prompt.</p>
+
+</div>
+
+<div class="flow-arrow">
+
+➜
+
+</div>
+
+<div class="flow-box">
+
+<h3>AI Image Model</h3>
+
+<p>Model predicts pixels from learned patterns.</p>
+
+</div>
+
+<div class="flow-arrow">
+
+➜
+
+</div>
+
+<div class="flow-box">
+
+<h3>Generated Image</h3>
+
+<p>Rendering artifacts may appear.</p>
+
+</div>
+
+<div class="flow-arrow">
+
+➜
+
+</div>
+
+<div class="flow-box">
+
+<h3>Evaluation</h3>
+
+<p>Inspect for AI tells and classify errors.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===========================================================
+COMMON TYPES
+=========================================================== -->
+
+<div class="section">
+
+<h2>
+
+Common Types of AI Slop
+
+</h2>
+
+<p>
+
+The following categories represent the most common AI-generated image artifacts encountered during evaluation.
+
+</p>
+
+<br>
+
+<div class="grid three">
+
+<div class="slop-card">
+
+<div class="slop-image">
+
+<img
+    src="images/text-rendering.jpg"
+    alt="Example of AI text rendering errors">
+
+</div>
+
+<h3>🟦 Text Rendering</h3>
+
+<p>
+
+Unreadable words, distorted typography, misspelled signs, malformed OCR.
+
+</p>
+
+</div>
+
+<div class="slop-card">
+
+<div class="slop-image">
+
+<img
+    src="images/anatomy.jpg"
+    alt="Example of AI anatomy errors">
+
+</div>
+
+<h3>🟨 Anatomy</h3>
+
+<p>
+
+Extra fingers, merged limbs, distorted faces, impossible body structures.
+
+</p>
+
+</div>
+
+<div class="slop-card">
+
+<div class="slop-image">
+
+<img
+    src="images/object-integrity.jpg"
+    alt="Example of AI object integrity errors">
+
+</div>
+
+<h3>🟪 Object Integrity</h3>
+
+<p>
+
+Merged objects, broken geometry, unrealistic object construction.
+
+</p>
+
+</div>
+
+<div class="slop-card">
+
+<div class="slop-image">
+
+<img
+    src="images/scene-logic.jpg"
+    alt="Example of AI scene logic errors">
+
+</div>
+
+<h3>🟥 Scene Logic</h3>
+
+<p>
+
+Objects violating physics or appearing in impossible locations.
+
+</p>
+
+</div>
+
+<div class="slop-card">
+
+<div class="slop-image">
+
+<img
+    src="images/counting.jpg"
+    alt="Example of AI counting errors">
+
+</div>
+
+<h3>🟩 Counting</h3>
+
+<p>
+
+Incorrect numbers of people, animals, fingers, chairs, or objects.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===========================================================
+KEY TAKEAWAYS
+=========================================================== -->
+
+<div class="section">
+
+<div class="card">
+
+<h2>
+
+Key Takeaways
+
+</h2>
+
+<ul class="takeaways">
+
+<li>
+
+AI-generated images often appear realistic from a distance but reveal artifacts during close inspection.
+
+</li>
+
+<li>
+
+Text rendering remains one of the easiest AI tells to detect.
+
+</li>
+
+<li>
+
+Hands, faces, object interactions, and counting should always be examined carefully.
+
+</li>
+
+<li>
+
+Systematic inspection is more reliable than relying on intuition alone.
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+<div class="lesson-navigation">
+
+<button
+class="btn btn-outline previous-tab">
+
+← Previous
+
+</button>
+
+<button
+class="btn btn-primary next-tab">
+
+Next →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================================================
+TAB 2
+=========================================================== -->
+<section class="tab" id="tab2">
+
+<div class="section">
+
+<div class="formula-banner">
+
+<h2>
+
+High-Value Prompt Formula
+
+</h2>
+
+<p>
+
+Combining multiple constraints makes it more likely for AI image models to reveal rendering failures. Use the formula below to design prompts that stress-test anatomy, counting, text rendering, object relationships, and scene understanding.
+
+</p>
+
+<div class="formula-row">
+
+<div class="formula-box">👥<br>People</div>
+
+<div class="formula-symbol">+</div>
+
+<div class="formula-box">🎬<br>Actions</div>
+
+<div class="formula-symbol">+</div>
+
+<div class="formula-box">🔢<br>Exact Counts</div>
+
+<div class="formula-symbol">+</div>
+
+<div class="formula-box">🔤<br>Text Elements</div>
+
+<div class="formula-symbol">+</div>
+
+<div class="formula-box">🤝<br>Interactions</div>
+
+<div class="formula-symbol">+</div>
+
+<div class="formula-box">🏥<br>Scene</div>
+
+<div class="formula-symbol">=</div>
+
+<div class="formula-box">
+
+⭐
+
+<br>
+
+High-Value Prompt
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>
+
+Understanding Each Component
+
+</h2>
+
+<div class="grid three">
+
+<div class="component-card">
+
+<div class="component-icon">👥</div>
+
+<h3>People</h3>
+
+<p>
+
+Evaluates anatomy, pose, identity, and subject count.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Five owners and one receptionist
+
+</p>
+
+</div>
+
+<div class="component-card">
+
+<div class="component-icon">🎬</div>
+
+<h3>Actions</h3>
+
+<p>
+
+Tests whether AI correctly performs simultaneous activities.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Reviewing appointment forms
+
+</p>
+
+</div>
+
+<div class="component-card">
+
+<div class="component-icon">🔢</div>
+
+<h3>Exact Counts</h3>
+
+<p>
+
+Evaluates numerical consistency.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Exactly three cats
+
+</p>
+
+</div>
+
+<div class="component-card">
+
+<div class="component-icon">🔤</div>
+
+<h3>Text Elements</h3>
+
+<p>
+
+Evaluates OCR and readable typography.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Schedules, name tags, posters
+
+</p>
+
+</div>
+
+<div class="component-card">
+
+<div class="component-icon">🤝</div>
+
+<h3>Object Interactions</h3>
+
+<p>
+
+Evaluates relationships between people and objects.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Owner holding cat carrier
+
+</p>
+
+</div>
+
+<div class="component-card">
+
+<div class="component-icon">🏥</div>
+
+<h3>Scene</h3>
+
+<p>
+
+Provides environmental context.
+
+</p>
+
+<strong>Example</strong>
+
+<p>
+
+Veterinary clinic waiting room
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="prompt-builder">
+
+<h2>
+
+Prompt Builder Workshop
+
+</h2>
+
+<p>
+
+Select one option from each category to create a high-value prompt.
+
+</p>
+
+<div class="builder-grid">
+
+<div>
+
+<label>People</label>
+
+<select id="peopleSelect">
+
+<option>Five owners + one receptionist</option>
+<option>Two veterinarians + one pet owner</option>
+<option>Four pet owners + two children</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Actions</label>
+
+<select id="actionSelect">
+
+<option>Reviewing appointment forms</option>
+<option>Examining a golden retriever</option>
+<option>Checking in for an appointment</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Exact Counts</label>
+
+<select id="countSelect">
+
+<option>Exactly three cats</option>
+<option>Exactly two dogs and one cat</option>
+<option>Exactly four puppies</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Text Elements</label>
+
+<select id="textSelect">
+
+<option>Name tags, schedules, posters</option>
+<option>Prescription labels, appointment cards, signs</option>
+<option>Clinic logo, vaccination certificates, brochures</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Object Interactions</label>
+
+<select id="interactionSelect">
+
+<option>Owners holding cat carriers</option>
+<option>Veterinarian holding a stethoscope while examining a dog</option>
+<option>Child carrying a pet carrier</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Scene</label>
+
+<select id="sceneSelect">
+
+<option>Veterinary clinic waiting room</option>
+<option>Animal hospital examination room</option>
+<option>Pet adoption center lobby</option>
+
+</select>
+
+</div>
+
+</div>
+
+<br>
+
+<button
+    class="btn btn-primary"
+    id="generatePrompt">
+
+Generate Prompt
+
+</button>
+
+<div class="prompt-output">
+
+<strong>Generated Prompt</strong>
+
+<p id="generatedPrompt">
+
+A veterinary clinic waiting room where exactly three cats sit with five owners. A receptionist reviews appointment forms while printed schedules, pet name tags, vaccination records, and informational posters are visible throughout the room. Several owners hold cat carriers while waiting for their appointments.
+
+</p>
+
+</div>
+
+<div class="checklist">
+
+<div class="check-item">✅ Anatomy</div>
+
+<div class="check-item">✅ Counting</div>
+
+<div class="check-item">✅ Text Rendering</div>
+
+<div class="check-item">✅ Object Relationships</div>
+
+<div class="check-item">✅ Scene Understanding</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="lesson-navigation">
+
+<button
+class="btn btn-outline previous-tab">
+
+← Previous
+
+</button>
+
+<button
+class="btn btn-primary next-tab">
+
+Next →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===========================================================
+TAB 3 - AI TELL EXPLORER
+=========================================================== -->
+
+<section class="tab" id="tab3">
+
+    <!-- ==========================================
+         Introduction
+    ========================================== -->
+
+    <div class="section">
+
+        <h2>AI Tell Explorer</h2>
+
+        <p>
+            Study the generated veterinary clinic image. Click each numbered
+            hotspot to inspect the AI-generated artifact, understand why it
+            occurs, and learn how experienced reviewers identify it.
+        </p>
+
+    </div>
+
+    <!-- ==========================================
+         Explorer Layout
+    ========================================== -->
+<!-- ==========================================
+     Explorer Toolbar
+========================================== -->
+
+<div class="explorer-toolbar">
+
+    <div class="toolbar-group">
+
+        <label for="sceneSelector">Scene</label>
+
+        <select id="sceneSelector">
+
+            <option value="veterinary" selected>
+                Veterinary Clinic
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="toolbar-group">
+
+        <label for="categoryFilter">Category</label>
+
+        <select id="categoryFilter">
+
+            <option value="all">All AI Tells</option>
+
+            <option value="text">Text Rendering</option>
+
+            <option value="anatomy">Anatomy</option>
+
+            <option value="object">Object Integrity</option>
+
+            <option value="scene">Scene Logic</option>
+
+            <option value="count">Counting</option>
+
+        </select>
+
+    </div>
+
+    <div class="toolbar-group toolbar-search">
+
+        <label for="annotationSearch">Search</label>
+
+        <input
+            type="text"
+            id="annotationSearch"
+            placeholder="Search annotations...">
+
+    </div>
+
+    <button
+        class="btn btn-outline"
+        id="resetExplorer">
+
+        Reset Explorer
+
+    </button>
+
+</div>
+    
+<div class="explorer-layout" id="explorerLayout">
+
+    <!-- ==========================================
+         LEFT COLUMN
+    =========================================== -->
+
+    <div class="image-panel" id="imagePanel">
+
+        <!-- Image -->
+
+        <div id="annotationCanvas" class="image-container">
+
+            <img
+                id="trainingImage"
+                src="images/veterinary-clinic.jpg"
+                alt="Veterinary Clinic">
+
+            <!-- Loading -->
+
+            <div
+                id="loadingOverlay"
+                class="loading-overlay hidden">
+
+                <div class="loading-spinner"></div>
+                <p>Loading Scene...</p>
+
+            </div>
+
+            <!-- Hotspots -->
+
+            <div id="hotspotLayer"></div>
+
+            <!-- Reserved -->
+
+            <div
+                id="quizOverlay"
+                class="hidden">
+            </div>
+
+        </div>
+
+        <!-- ======================================
+             Annotation Inspector
+        ======================================= -->
+
+        <div
+            class="info-card"
+            id="annotationInspector">
+
+            <h3>Annotation Inspector</h3>
+
+            <div class="annotation-count">
+
+                <span>Total AI Tells</span>
+
+                <span id="annotationTotal">
+                    0
+                </span>
+
+            </div>
+
+            <hr>
+
+            <div id="annotationContent">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🔍
+                    </div>
+
+                    <h4>Start Inspecting</h4>
+
+                    <p>
+                        Select any numbered hotspot to learn
+                        what the AI generated incorrectly,
+                        why the artifact occurs,
+                        and how experienced reviewers
+                        inspect it.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         RIGHT COLUMN
+    =========================================== -->
+
+    <div
+        class="side-panel"
+        id="sidePanel">
+
+        <!-- Legend -->
+
+        <div class="info-card">
+
+            <h3>Legend</h3>
+
+            <div class="legend">
+
+                <div
+                    class="legend-item"
+                    data-filter="text">
+
+                    <div class="legend-color text-render"></div>
+
+                    <span>
+                        🟦 Text Rendering
+                        (<span id="count-text">0</span>)
+                    </span>
+
+                </div>
+
+                <div
+                    class="legend-item"
+                    data-filter="anatomy">
+
+                    <div class="legend-color anatomy"></div>
+
+                    <span>
+                        🟨 Anatomy
+                        (<span id="count-anatomy">0</span>)
+                    </span>
+
+                </div>
+
+                <div
+                    class="legend-item"
+                    data-filter="object">
+
+                    <div class="legend-color object"></div>
+
+                    <span>
+                        🟪 Object Integrity
+                        (<span id="count-object">0</span>)
+                    </span>
+
+                </div>
+
+                <div
+                    class="legend-item"
+                    data-filter="scene">
+
+                    <div class="legend-color scene"></div>
+
+                    <span>
+                        🟥 Scene Logic
+                        (<span id="count-scene">0</span>)
+                    </span>
+
+                </div>
+
+                <div
+                    class="legend-item"
+                    data-filter="count">
+
+                    <div class="legend-color count"></div>
+
+                    <span>
+                        🟩 Counting
+                        (<span id="count-count">0</span>)
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Original Prompt -->
+
+        <div class="info-card">
+
+            <h3>Original Prompt</h3>
+
+            <div
+                class="prompt-box"
+                id="originalPrompt">
+
+                Loading prompt...
+
+            </div>
+
+        </div>
+
+        <!-- Developer Panel -->
+
+        <div
+            id="developerPanel"
+            class="info-card hidden">
+
+            <h3>Developer Mode</h3>
+
+            <div class="developer-status">
+                Developer Mode Active
+            </div>
+
+            <div class="developer-field">
+
+                <label>Selected Annotation</label>
+
+                <span id="devSelected">
+                    None
+                </span>
+
+            </div>
+
+            <div class="developer-field">
+
+                <label>X Position (%)</label>
+
+                <input
+                    id="devX"
+                    type="number"
+                    step="0.1">
+
+            </div>
+
+            <div class="developer-field">
+
+                <label>Y Position (%)</label>
+
+                <input
+                    id="devY"
+                    type="number"
+                    step="0.1">
+
+            </div>
+
+            <div class="developer-field">
+
+                <label>Current Coordinates</label>
+
+                <span id="devCoordinates">
+                    (0.0%, 0.0%)
+                </span>
+
+            </div>
+
+            <div class="developer-navigation">
+
+                <button
+                    id="previousAnnotation"
+                    class="btn btn-outline">
+
+                    ◀ Previous
+
+                </button>
+
+                <button
+                    id="nextAnnotation"
+                    class="btn btn-outline">
+
+                    Next ▶
+
+                </button>
+
+            </div>
+
+            <div class="developer-buttons">
+
+                <button
+                    id="copyCoords"
+                    class="btn btn-outline">
+
+                    Copy JSON
+
+                </button>
+
+                <button
+                    id="exportJSON"
+                    class="btn btn-primary">
+
+                    Export JSON
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ==========================================
+         Lesson Navigation
+    ========================================== -->
+
+    <div class="lesson-navigation">
+
+        <button
+            class="btn btn-outline previous-tab">
+
+            ← Previous
+
+        </button>
+
+        <button
+            class="btn btn-primary next-tab">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ===========================================================
+TAB 4 - ASSESSMENT
+=========================================================== -->
+
+<section class="tab" id="tab4">
+
+    <!-- ==========================================
+         Assessment Header
+    ========================================== -->
+
+    <div class="section">
+
+        <div class="card">
+
+            <h2>Final Assessment</h2>
+
+            <p>
+                Complete the short knowledge quiz.
+            </p>
+
+            <br>
+
+            <ul class="takeaways">
+
+                <li>✔ Knowledge Quiz (15 Questions)</li>
+
+                <li>✔ View your final score and feedback</li>
+
+            </ul>
+
+            <br>
+
+           <button
+<button
+    class="btn btn-primary"
+    id="startAssessment">
+
+    Start Assessment →
+
+</button>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Practical Challenge
+    ========================================== -->
+
+
+    <!-- ==========================================
+         Knowledge Quiz
+    ========================================== -->
+
+   <div
+    class="section hidden"
+    id="quizSection">
+
+    <div class="card">
+
+        <h2>Knowledge Quiz</h2>
+
+        <p id="questionNumber"></p>
+
+        <span
+            class="category-badge"
+            id="questionCategory">
+        </span>
+
+        <h3 id="questionText"></h3>
+
+        <div
+            id="questionOptions"
+            class="quiz-options">
+        </div>
+
+        <div class="lesson-navigation">
+
+            <button
+                class="btn btn-outline"
+                id="previousQuestion"
+                onclick="previousQuestion()">
+
+                ← Previous
+
+            </button>
+
+            <button
+                class="btn btn-primary"
+                id="nextQuestion"
+                onclick="nextQuestion()">
+
+                Next →
+
+            </button>
+
+            <button
+                class="btn btn-primary hidden"
+                id="submitQuiz"
+                onclick="showResults()">
+
+                Submit Assessment
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ==========================================
+         Results
+    ========================================== -->
+
+    <div
+        class="section hidden"
+        id="resultsSection">
+
+        <div class="card">
+
+            <h2>Assessment Complete</h2>
+
+            <br>
+
+            <h3 id="finalScore">
+
+                0%
+
+            </h3>
+
+            <br>
+
+            <p id="scoreMessage">
+
+                Great work!
+
+            </p>
+
+            <br>
+
+            <div id="scoreBreakdown">
+
+                <p>
+                    Practical Challenge:
+                    <strong id="challengeScore">0 / 10</strong>
+                </p>
+
+                <p>
+                    Knowledge Quiz:
+                    <strong id="quizScore">0 / 5</strong>
+                </p>
+
+            </div>
+
+            <br>
+<button
+    class="btn btn-outline"
+    id="retakeAssessment"
+    onclick="retakeAssessment()">
+
+    Retake Assessment
+
+</button>
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Lesson Navigation
+    ========================================== -->
+
+    <div class="lesson-navigation">
+
+        <button
+            class="btn btn-outline previous-tab">
+
+            ← Previous
+
+        </button>
+
+        <button
+            class="btn btn-primary"
+            disabled>
+
+            Finish
+
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ===========================================================
+MODAL
+=========================================================== -->
+
+<div
+    class="modal"
+    id="infoModal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+
+            Title
+
+        </h2>
+
+        <p id="modalDescription">
+
+            Description
+
+        </p>
+
+        <br>
+
+        <button
+            class="btn btn-primary">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===========================================================
+FOOTER
+=========================================================== -->
+
+<footer
+    style="text-align:center;
+           padding:50px;
+           color:#64748b;">
+
+    AI Slop Detection Training Module
+
+</footer>
+<script src="script.js"></script>
+</body>
+
+</html>
