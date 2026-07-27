@@ -909,6 +909,8 @@ function selectAnnotation(id) {
 
     updateInspector();
 
+    updateZoom(explorer.selected);
+
     updateDeveloperPanel();
 
     highlightHotspot();
@@ -982,6 +984,26 @@ function updateInspector() {
 
 }
 
+/* ----------------------------------------------------------
+   Update Zoom Inspector
+---------------------------------------------------------- */
+
+function updateZoom(annotation) {
+
+    const zoomViewer = document.getElementById("zoomViewer");
+
+    if (!zoomViewer || !annotation) return;
+
+    const image = document.getElementById("trainingImage");
+
+    if (!image) return;
+
+    zoomViewer.style.backgroundImage = `url("${image.src}")`;
+
+    zoomViewer.style.backgroundPosition =
+        `${annotation.x}% ${annotation.y}%`;
+
+}
 
 /* ----------------------------------------------------------
    Highlight Selected Hotspot
