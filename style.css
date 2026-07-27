@@ -1219,6 +1219,50 @@ line-height:1.8;
 }
 
 /* ==========================================
+   Zoom Inspector
+========================================== */
+
+#zoomInspector{
+
+    margin-top:16px;
+
+}
+
+.zoom-help{
+
+    font-size:.9rem;
+
+    color:#64748b;
+
+    margin-bottom:12px;
+
+    line-height:1.5;
+
+}
+
+#zoomViewer{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:300%;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
    Annotation Canvas
 ========================================== */
 
