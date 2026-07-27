@@ -189,6 +189,15 @@ function initializePromptBuilder() {
 
       ].filter(value => value !== "");
 
+       if (selectedComponents.length < 2) {
+
+    document.getElementById("generatedPrompt").textContent =
+        "Select at least three components (including the scene). High-value prompts typically combine three or four complementary components without trying to include every available option.";
+
+    return;
+
+}
+
         const prompt = `A ${scene} where ${count.toLowerCase()} sit with ${people.toLowerCase()}. A receptionist is ${action.toLowerCase()} while ${text.toLowerCase()} are clearly visible throughout the room. Several people are ${interaction.toLowerCase()}.`;
 
         document.getElementById("generatedPrompt").textContent = prompt;
