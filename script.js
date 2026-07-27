@@ -198,9 +198,63 @@ function initializePromptBuilder() {
 
 }
 
-        const prompt = `A ${scene} where ${count.toLowerCase()} sit with ${people.toLowerCase()}. A receptionist is ${action.toLowerCase()} while ${text.toLowerCase()} are clearly visible throughout the room. Several people are ${interaction.toLowerCase()}.`;
+const sentences = [];
 
-        document.getElementById("generatedPrompt").textContent = prompt;
+// Scene
+sentences.push(`A ${scene}.`);
+
+// People + Counts
+if (people && count) {
+
+    sentences.push(
+        `${count} are present with ${people.toLowerCase()}.`
+    );
+
+}
+else if (people) {
+
+    sentences.push(
+        `${people} are present.`
+    );
+
+}
+else if (count) {
+
+    sentences.push(
+        `${count} are present.`
+    );
+
+}
+
+// Actions
+if (action) {
+
+    sentences.push(
+        `A receptionist is ${action.toLowerCase()}.`
+    );
+
+}
+
+// Text
+if (text) {
+
+    sentences.push(
+        `${text} are clearly visible throughout the room.`
+    );
+
+}
+
+// Object Interactions
+if (interaction) {
+
+    sentences.push(
+        `Several people are ${interaction.toLowerCase()}.`
+    );
+
+}
+
+document.getElementById("generatedPrompt").textContent =
+    sentences.join(" ");
 
     });
 
