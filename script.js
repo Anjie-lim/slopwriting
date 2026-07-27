@@ -179,6 +179,15 @@ function initializePromptBuilder() {
         const text = document.getElementById("textSelect").value;
         const interaction = document.getElementById("interactionSelect").value;
         const scene = document.getElementById("sceneSelect").value;
+       const selectedComponents = [
+
+          people,
+          action,
+          count,
+          text,
+          interaction
+
+      ].filter(value => value !== "");
 
         const prompt = `A ${scene} where ${count.toLowerCase()} sit with ${people.toLowerCase()}. A receptionist is ${action.toLowerCase()} while ${text.toLowerCase()} are clearly visible throughout the room. Several people are ${interaction.toLowerCase()}.`;
 
